@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -20,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
+        <meta name="google-adsense-account" content="ca-pub-2976969141373216" />
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2976969141373216"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
         />
       </head>
       <body className={geist.className}>{children}</body>
