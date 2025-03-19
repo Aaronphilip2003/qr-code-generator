@@ -19,15 +19,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2976969141373216"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2976969141373216"
+        crossOrigin="anonymous"
+        strategy="lazyOnload"
+      />
       <body className={geist.className}>{children}</body>
     </html>
   );
+}
+
+export async function GET() {
+  return new Response('google.com, pub-2976969141373216, DIRECT, f08c47fec0942fa0', {
+    headers: {
+      'Content-Type': 'text/plain',
+    },
+  });
 }
