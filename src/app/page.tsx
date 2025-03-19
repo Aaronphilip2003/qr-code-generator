@@ -26,11 +26,6 @@ export default function Home() {
       <main className="w-full max-w-2xl flex flex-col items-center gap-8">
         <h1 className="text-3xl font-bold text-center">URL to QR Code Converter</h1>
 
-        {/* Ad placeholder */}
-        <div className="w-full h-[100px] bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-          Ad Space
-        </div>
-
         <div className="w-full space-y-4">
           <input
             type="url"
@@ -41,35 +36,30 @@ export default function Home() {
           />
 
           <div className="flex flex-col items-center gap-4">
-            <div
-              id="qr-code"
-              className="p-4 bg-white dark:bg-gray-800 rounded-lg"
-            >
-              {url && (
-                <QRCodeSVG
-                  value={url}
-                  size={256}
-                  level="H"
-                  includeMargin={true}
-                  className="dark:bg-white p-2 rounded"
-                />
-              )}
-            </div>
+            {url.trim() && (
+              <>
+                <div
+                  id="qr-code"
+                  className="p-4 bg-white dark:bg-gray-800 rounded-lg"
+                >
+                  <QRCodeSVG
+                    value={url}
+                    size={256}
+                    level="H"
+                    includeMargin={true}
+                    className="dark:bg-white p-2 rounded"
+                  />
+                </div>
 
-            {url && (
-              <button
-                onClick={downloadQRCode}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-              >
-                Download QR Code
-              </button>
+                <button
+                  onClick={downloadQRCode}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                >
+                  Download QR Code
+                </button>
+              </>
             )}
           </div>
-        </div>
-
-        {/* Bottom ad placeholder */}
-        <div className="w-full h-[100px] bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-          Ad Space
         </div>
       </main>
     </div>
