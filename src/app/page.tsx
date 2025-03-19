@@ -1,10 +1,24 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import * as htmlToImage from 'html-to-image';
 
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
+
 export default function Home() {
   const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   const downloadQRCode = async () => {
     const qrCodeElement = document.getElementById('qr-code');
@@ -25,6 +39,15 @@ export default function Home() {
     <div className="min-h-screen p-8 flex flex-col items-center justify-center gap-8">
       <main className="w-full max-w-2xl flex flex-col items-center gap-8">
         <h1 className="text-3xl font-bold text-center">URL to QR Code Converter</h1>
+
+        {/* AdSense Ad */}
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-2976969141373216"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
 
         <div className="w-full space-y-4">
           <input
@@ -61,6 +84,15 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        {/* Bottom AdSense Ad */}
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-2976969141373216"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
       </main>
     </div>
   );
