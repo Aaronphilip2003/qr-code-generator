@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import * as htmlToImage from 'html-to-image';
+import { ThemeToggle } from './components/ThemeToggle';
 
 declare global {
   interface Window {
@@ -37,6 +38,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen p-8 flex flex-col items-center justify-center">
+      <ThemeToggle />
       <main className="w-full max-w-3xl flex flex-col items-center gap-8">
         <h1 className="text-4xl font-bold text-center">Free QR Code Generator</h1>
 
@@ -121,6 +123,7 @@ export default function Home() {
             <li>No registration required - generate QR codes instantly</li>
             <li>High-quality PNG downloads</li>
             <li>Mobile-friendly design</li>
+            <li>Light and dark mode support</li>
             <li>Simple and easy to use interface</li>
           </ul>
         </section>
