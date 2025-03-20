@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -26,7 +27,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={geist.className}>{children}</body>
+      <body className={geist.className}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
