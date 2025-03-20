@@ -36,9 +36,15 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen p-8 flex flex-col items-center justify-center gap-8">
-      <main className="w-full max-w-2xl flex flex-col items-center gap-8">
-        <h1 className="text-3xl font-bold text-center">URL to QR Code Converter</h1>
+    <div className="min-h-screen p-8 flex flex-col items-center justify-center">
+      <main className="w-full max-w-3xl flex flex-col items-center gap-8">
+        <h1 className="text-4xl font-bold text-center">Free QR Code Generator</h1>
+
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-lg mb-4">
+            Create QR codes instantly for websites, URLs, and links. No sign-up required, completely free to use.
+          </p>
+        </div>
 
         {/* AdSense Ad */}
         <ins
@@ -49,13 +55,14 @@ export default function Home() {
           data-full-width-responsive="true"
         />
 
-        <div className="w-full space-y-4">
+        <div className="w-full space-y-4 bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Generate Your QR Code</h2>
           <input
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="Enter your URL here"
-            className="w-full p-3 border rounded-lg dark:bg-gray-800"
+            placeholder="Enter your URL here (e.g., https://www.example.com)"
+            className="w-full p-3 border rounded-lg dark:bg-gray-700"
           />
 
           <div className="flex flex-col items-center gap-4">
@@ -63,7 +70,7 @@ export default function Home() {
               <>
                 <div
                   id="qr-code"
-                  className="p-4 bg-white dark:bg-gray-800 rounded-lg"
+                  className="p-4 bg-white dark:bg-gray-700 rounded-lg shadow-lg"
                 >
                   <QRCodeSVG
                     value={url}
@@ -76,7 +83,7 @@ export default function Home() {
 
                 <button
                   onClick={downloadQRCode}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold"
                 >
                   Download QR Code
                 </button>
@@ -84,6 +91,39 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        <section className="w-full space-y-6 mt-8">
+          <h2 className="text-2xl font-semibold">How to Use Our QR Code Generator</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+              <h3 className="font-semibold mb-2">1. Enter Your URL</h3>
+              <p>Paste any website URL into the input field above. Make sure to include https:// or http://.</p>
+            </div>
+            <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+              <h3 className="font-semibold mb-2">2. Generate QR Code</h3>
+              <p>Your QR code will be generated automatically as soon as you enter a valid URL.</p>
+            </div>
+            <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+              <h3 className="font-semibold mb-2">3. Download Your QR Code</h3>
+              <p>Click the "Download QR Code" button to save your QR code as a PNG image.</p>
+            </div>
+            <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+              <h3 className="font-semibold mb-2">4. Use Anywhere</h3>
+              <p>Use your QR code on business cards, posters, websites, or any marketing materials.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full mt-8">
+          <h2 className="text-2xl font-semibold mb-4">Why Use Our QR Code Generator?</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Free to use - no hidden costs or subscriptions</li>
+            <li>No registration required - generate QR codes instantly</li>
+            <li>High-quality PNG downloads</li>
+            <li>Mobile-friendly design</li>
+            <li>Simple and easy to use interface</li>
+          </ul>
+        </section>
 
         {/* Bottom AdSense Ad */}
         <ins
