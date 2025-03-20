@@ -105,7 +105,7 @@ export default function Home() {
             </div>
             <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
               <h3 className="font-semibold mb-2">3. Download Your QR Code</h3>
-              <p>Click the "Download QR Code" button to save your QR code as a PNG image.</p>
+              <p>Click the &ldquo;Download QR Code&rdquo; button to save your QR code as a PNG image.</p>
             </div>
             <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
               <h3 className="font-semibold mb-2">4. Use Anywhere</h3>
